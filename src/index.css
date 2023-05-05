@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("./fonts/gelion/style.css");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+/* Hide the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+/* Set the width of the scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+body {
+  @apply bg-white h-full overflow-x-hidden m-0;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  color: #a19a9a;
+  font-size: 16px;
+}
+
+html {
+  @apply h-full;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply text-black;
+  font-family: "Gelion Regular", sans-serif;
+}
+
+.button {
+  @apply relative px-8 py-4 sm:px-16 sm:py-5 xl:mb-32 text-white rounded-full transition-transform duration-300 hover:scale-110 text-2xl;
+  font-family: "Gelion Thin", sans-serif;
+  background-color: #5d5cd6;
+}
+
+#at {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.purple {
+  color: #5d5cd6;
+}
+
+/* Styles for small screens */
+@media (max-width: 640px) {
+  .button {
+    font-size: 16px !important;
+    line-height: 19px !important;
+    letter-spacing: -0.02em !important;
+  }
+}
+
+@media (max-width: 375px) {
+  #arrow {
+    bottom: 5rem;
+  }
+  #arrow img {
+    height: 4rem;
+  }
+  footer {
+    margin: 1.5rem !important;
+  }
+}
+
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-grow-shrink {
+  display: inline-block;
+  animation: grow-shrink 2s ease-in-out infinite;
+  -webkit-animation: grow-shrink 2s ease-in-out infinite;
+  transform: translateZ(0); /* add this line */
+  animation-delay: calc(0.1s * var(--index));
+  --index: 1;
+}
+
+.gradient-text {
+  background-image: linear-gradient(
+    -150deg,
+    #231557 0%,
+    #a9a9f5 29%,
+    #5d5cd6 67%,
+    #5d5cd6 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 4s linear infinite;
+  display: inline-block;
+}
+
+@keyframes gradient {
+  to {
+    background-position: 200% center;
+  }
+}
